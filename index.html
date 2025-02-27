@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeFangIT 🦇🦇🦇</title>
+</head>
+<body>
+
+    <input id="fang-string" type="text"/>
+    <button>De-FangIT</button>
+    <h2>De-Fang:   </h2><h2 id="fang-output"></h2>
+
+</body>
+<script>
+    function defangit(fangstring) {
+        return fangstring.split('.').join('[.]');
+    };
+    
+    const args = process.argv.slice(2);
+    const fangedString = args[0];
+    
+    if (!fangedString) {
+        console.log("skill issue?");
+    } else {
+        let deFangedString = defangit(fangedString);
+        console.log("De-fanged:   ", deFangedString);
+    };
+</script>
+</html>
