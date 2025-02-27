@@ -7,4 +7,4 @@ How to run in nodejs:
 
 
 
-:: made by lordradias 4 u ::
+🧛
