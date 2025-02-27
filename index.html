@@ -8,23 +8,34 @@
 <body>
 
     <input id="fang-string" type="text"/>
-    <button>De-FangIT</button>
-    <h2>De-Fang:   </h2><h2 id="fang-output"></h2>
+    <button id="fang-button">De-FangIT</button>
+    <h2>De-Fang: </h2><h2 id="fang-output"></h2>
 
 </body>
 <script>
+
+    let fangedStringInput = document.getElementById("fang-string");
+    const buttonFang = document.getElementById("fang-button");
+    const fangOutput = document.getElementById("fang-output");
+
+    // defang 
     function defangit(fangstring) {
         return fangstring.split('.').join('[.]');
     };
-    
-    const args = process.argv.slice(2);
-    const fangedString = args[0];
-    
-    if (!fangedString) {
-        console.log("skill issue?");
-    } else {
-        let deFangedString = defangit(fangedString);
-        console.log("De-fanged:   ", deFangedString);
+
+    // sanitize input
+    function sanitizeInput(input) {
+        const div = document.createElement("div");
+        div.textContent = input;
+        return div.innerHTML; 
     };
+
+    // button click 
+    buttonFang.addEventListener("click", function() {
+        let fangedString = fangedStringInput.value;
+        let sanitizedInput = sanitizeInput(fangedString);
+        fangOutput.textContent = defangit(sanitizedInput);
+    });
+
 </script>
 </html>
