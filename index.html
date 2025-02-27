@@ -9,7 +9,7 @@
 
     <input id="fang-string" type="text"/>
     <button id="fang-button">De-FangIT</button>
-    <h2>De-Fang: </h2><h2 id="fang-output"></h2>
+    <h2 id="fang-output"></h2>
 
 </body>
 <script>
@@ -23,14 +23,12 @@
         return fangstring.split('.').join('[.]');
     };
 
-    // sanitize input
     function sanitizeInput(input) {
         const div = document.createElement("div");
         div.textContent = input;
         return div.innerHTML; 
     };
 
-    // button click 
     buttonFang.addEventListener("click", function() {
         let fangedString = fangedStringInput.value;
         let sanitizedInput = sanitizeInput(fangedString);
