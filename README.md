@@ -2,8 +2,7 @@
 De-Fang spicy strings!
 
 How to run: 
-
-node defang.js spicystring.example.com
+`node defang.js spicystring.example.com`
 
 
 
