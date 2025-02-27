@@ -1,4 +1,4 @@
-# defangit
+# defangIT
 De-Fang spicy strings!
 
 
