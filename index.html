@@ -4,19 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeFangIT</title>
-    <style>
-        * {
-            background-color: hsl(0, 0%, 22%);
-            color: aliceblue;
-        }
-    </style>
 </head>
 <body>
-    <center>
-        <input id="fang-string" type="text"/>
-        <button id="fang-button">deFang</button>
-        <h2 id="fang-output"></h2>
-    </center>
+
+    <style>
+        * {
+            background-color: hsl(231, 20%, 33%);
+            color: aliceblue;
+        };
+
+        #main-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+        }
+
+        #main-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+        }
+
+        #fang-box {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #fang-string {
+            width: 500px;
+            height: 50px;
+            font-size: larger;
+        }
+
+        #fang-button {
+            padding: 10px;
+            margin: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: medium;
+            border-radius: 5px;
+            background-color: rgb(76, 76, 76);
+        }
+
+        #bat-image {
+            height: 50px;
+            width: 130px;
+        }
+
+    </style>
+
+    <div id="main-box">
+        <div id="image-box">
+            <img src="./defang.png" id="bat-image"/>
+        </div>
+        <div id="fang-box">
+            <input id="fang-string" type="text"/>
+            <button id="fang-button">de-fang it!</button>
+            <h2 id="fang-output"></h2>
+        </div>
+    </div>
 </body>
 <script>
 
@@ -26,7 +78,7 @@
 
     // defang 
     function defangit(fangstring) {
-        return fangstring.split('.').join('[.]');
+        return fangstring.split('.').join('[.]').split(':').join('[:]');
     };
 
     function sanitizeInput(input) {
